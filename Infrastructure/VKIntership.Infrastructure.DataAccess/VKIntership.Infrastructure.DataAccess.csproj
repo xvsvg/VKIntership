@@ -8,4 +8,12 @@
 		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Application\VKIntership.Application.DataAccess.Abstractions\VKIntership.Application.DataAccess.Abstractions.csproj" />
+	</ItemGroup>
+
 </Project>
