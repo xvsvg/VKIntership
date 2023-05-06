@@ -1,4 +1,6 @@
-﻿using VKIntership.Domain.Core.Tools;
+﻿using VKIntership.Domain.Core.Abstractions;
+using VKIntership.Domain.Core.Tools;
+using VKIntership.Domain.Core.UserGroups;
 
 #pragma warning disable CS8618
 
@@ -13,8 +15,8 @@ public class User
         string login,
         string password,
         DateTime createDate,
-        string userGroup,
-        string userState)
+        UserGroup userGroup,
+        UserState userState)
     {
         Id = id;
         Login = login;
@@ -28,6 +30,6 @@ public class User
     public string Login { get; }
     public string Password { get; }
     public DateTime CreateDate { get; }
-    public string UserGroup { get; }
-    public string UserState { get; }
+    public UserGroup UserGroup { get; }
+    public UserState UserState { get; }
 }

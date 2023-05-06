@@ -1,7 +1,19 @@
-﻿namespace VKIntership.Domain.Core.Abstractions;
+﻿#pragma warning disable CS8618
 
-public static class UserState
+namespace VKIntership.Domain.Core.Abstractions;
+
+public class UserState
 {
-    public const string Active = "Active";
-    public const string Blocked = "Blocked";
+    protected UserState() { }
+
+    public UserState(Guid id, string code, string? description)
+    {
+        Id = id;
+        Code = code;
+        Description = description ?? string.Empty;
+    }
+
+    public Guid Id { get; }
+    public string Code { get; }
+    public string Description { get; }
 }

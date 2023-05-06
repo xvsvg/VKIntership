@@ -1,7 +1,19 @@
-﻿namespace VKIntership.Domain.Core.Abstractions;
+﻿#pragma warning disable CS8618
 
-public static class UserRole
+namespace VKIntership.Domain.Core.Abstractions;
+
+public class UserRole
 {
-    public const string Admin = "Admin";
-    public const string User = "User";
+    protected UserRole() { }
+
+    public UserRole(Guid id, string code, string? description)
+    {
+        Id = id;
+        Code = code;
+        Description = description ?? string.Empty;
+    }
+
+    public Guid Id { get; }
+    public string Code { get; }
+    public string Description { get; }
 }
