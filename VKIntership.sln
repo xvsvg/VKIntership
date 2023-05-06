@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKIntership.Presentation.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKIntership.Test.Handlers", "Test\VKIntership.Test.Handlers\VKIntership.Test.Handlers.csproj", "{E3F85655-A0E2-4734-A619-A073BE0C8FE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKIntership.Application.Abstractions", "Application\VKIntership.Application.Abstractions\VKIntership.Application.Abstractions.csproj", "{0938610C-D387-4907-A5DC-77871F87E061}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{E3F85655-A0E2-4734-A619-A073BE0C8FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3F85655-A0E2-4734-A619-A073BE0C8FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3F85655-A0E2-4734-A619-A073BE0C8FE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0938610C-D387-4907-A5DC-77871F87E061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0938610C-D387-4907-A5DC-77871F87E061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0938610C-D387-4907-A5DC-77871F87E061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0938610C-D387-4907-A5DC-77871F87E061}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +107,7 @@ Global
 		{D9D186C0-54D4-442F-B4E3-02E25995223C} = {2CBF2C68-1739-4DC3-A98B-1ABAFF612B2E}
 		{94963DB0-89E3-4AE8-8F77-C0772A8B57D7} = {2CBF2C68-1739-4DC3-A98B-1ABAFF612B2E}
 		{E3F85655-A0E2-4734-A619-A073BE0C8FE1} = {9B4A3828-E892-4F2E-94A7-5A4FA4DE098B}
+		{0938610C-D387-4907-A5DC-77871F87E061} = {65FF8D44-0273-47E0-8620-2916B1221862}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C0C018E6-7717-47A7-B276-D35EC20806D7}
