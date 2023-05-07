@@ -7,5 +7,5 @@ public static class DeleteUser
 {
     public record Command(Guid Id) : IRequest<Response>;
 
-    public record Response(UserDto User)
+    public record Response(UserDto User);
 }
