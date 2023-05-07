@@ -8,4 +8,15 @@
 		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="MediatR" Version="12.0.1" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Application\VKIntership.Application.Contracts\VKIntership.Application.Contracts.csproj" />
+	  <ProjectReference Include="..\..\Application\VKIntership.Application.Dto\VKIntership.Application.Dto.csproj" />
+	  <ProjectReference Include="..\..\Domain\VKIntership.Domain.Common\VKIntership.Domain.Common.csproj" />
+	</ItemGroup>
+
 </Project>
