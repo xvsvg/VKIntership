@@ -20,6 +20,9 @@ internal class CreateUserHandler : IRequestHandler<Command, Response>
 
     public async Task<Response> Handle(Command request, CancellationToken cancellationToken)
     {
+        var userExists = await _context.Users
+            .AnyAsync(x => x.Login.Equals(request.Login));
+
         var role = await _context.UserGroups
             .FirstOrDefaultAsync(
                 x => x.Description.Equals(ApplicationUserRoles.User),
@@ -30,11 +33,20 @@ internal class CreateUserHandler : IRequestHandler<Command, Response>
                 x => x.Description.Equals(ApplicationUserState.Active),
                 cancellationToken);
 
+        var adminUserExists = await _context.Users
+            .AnyAsync(x => x.UserGroup.Code.Equals(ApplicationUserRoles.Admin));
+
         if (role is null)
             throw new EntityNotFoundException("Role \"user\" does not exist");
 
         if (status is null)
             throw new EntityNotFoundException("Status \"active\" does not exist");
+
+        if (adminUserExists)
+            throw new InvalidOperationException("Unable to create admin, because admin already exists");
+
+        if (userExists)
+            throw new InvalidOperationException($"User with login {request.Login} already exists");
 
         var user = new User(
             Guid.NewGuid(),
