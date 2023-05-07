@@ -12,5 +12,7 @@ public static class ServiceCollectionExtensions
         Action<DbContextOptionsBuilder> action)
     {
         collection.AddDbContext<IDatabaseContext, DatabaseContext>(action);
+        
+        return collection;
     }
 }
