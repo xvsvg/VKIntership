@@ -12,6 +12,7 @@ internal class Program
     public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
         builder.Host.UseSerilogForAppLogs(builder.Configuration);
 
         var webApiConfiguration = new WebApiConfiguration(builder.Configuration);
@@ -20,6 +21,8 @@ internal class Program
             o.UseNpgsql(webApiConfiguration.PostgresConfiguration.ToConnectionString("db")));
 
         builder.Services.AddHandlers(builder.Configuration);
+
+        builder.Services.AddControllers();
 
         builder.Services.AddSwaggerGen();
 
@@ -36,6 +39,8 @@ internal class Program
             await SeedingHelper.SeedUserGroups(scope.ServiceProvider);
             await SeedingHelper.SeedUserStates(scope.ServiceProvider);
         }
+
+        app.MapControllers();
 
         await app.RunAsync();
     }
