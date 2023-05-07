@@ -17,7 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="VKIntership.Application.Handlers"/>
+		<InternalsVisibleTo Include="VKIntership.Application.Handlers" />
 	</ItemGroup>
 
 </Project>
