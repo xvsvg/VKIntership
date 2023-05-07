@@ -7,8 +7,12 @@ using VKIntership.Domain.Common;
 
 namespace VKIntership.Presentation.Controllers;
 
-public class UserController : BaseController
+[Route("api/[controller]")]
+[ApiController]
+public class UserController : ControllerBase
 {
+    private readonly IMediator _mediator;
+
     public UserController(IMediator mediator)
     {
         _mediator = mediator;
@@ -16,6 +20,7 @@ public class UserController : BaseController
 
     [HttpGet("{userId:guid}")]
     [ProducesResponseType(200)]
+    [ProducesResponseType(404)]
     public async Task<ActionResult<UserDto?>> GetUser(Guid userId)
     {
         try
@@ -40,11 +45,12 @@ public class UserController : BaseController
         return Ok(response);
     }
 
-    [HttpPost("/create")]
+    [HttpPost("create")]
     [ProducesResponseType(201)]
+    [ProducesResponseType(400)]
     public async Task<ActionResult<UserDto>> CreateUser(
         [FromBody] string login,
-        string password,
+        [FromBody] string password,
         CancellationToken cancellationToken)
     {
         try
@@ -61,6 +67,8 @@ public class UserController : BaseController
     }
 
     [HttpDelete("{userId:guid}")]
+    [ProducesResponseType(200)]
+    [ProducesResponseType(400)]
     public async Task<ActionResult<UserDto>> DeleteUser(Guid userId)
     {
         try
@@ -74,5 +82,4 @@ public class UserController : BaseController
             return BadRequest(ex.Message);
         }
     }
-
 }
