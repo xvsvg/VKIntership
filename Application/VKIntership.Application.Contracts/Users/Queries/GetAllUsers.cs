@@ -5,7 +5,7 @@ namespace VKIntership.Application.Contracts.Users.Queries;
 
 public static class GetAllUsers
 {
-    public record Query() : IRequest<Response>;
+    public record Query(int Page) : IRequest<Response>;
 
-    public record Response(IEnumerable<UserDto> Users);
+    public record Response(IEnumerable<UserDto> Users, int PageCount);
 }
