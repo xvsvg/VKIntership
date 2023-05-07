@@ -30,5 +30,5 @@ public class User
     public string Password { get; }
     public DateTime CreateDate { get; }
     public UserRole UserGroup { get; }
-    public UserState UserState { get; }
+    public UserState UserState { get; set; }
 }
