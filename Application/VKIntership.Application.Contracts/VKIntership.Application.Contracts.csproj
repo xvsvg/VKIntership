@@ -18,6 +18,8 @@
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="VKIntership.Application.Handlers" />
+		<InternalsVisibleTo Include="VKIntership.Presentation.Controllers" />
+		<InternalsVisibleTo Include="VKIntership.Presentation.WebAPI" />
 	</ItemGroup>
 
 </Project>
