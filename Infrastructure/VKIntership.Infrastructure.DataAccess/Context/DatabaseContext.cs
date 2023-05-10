@@ -10,9 +10,9 @@ public class DatabaseContext : DbContext, IDatabaseContext
     public DatabaseContext(DbContextOptions<DatabaseContext> options)
         : base(options) { }
 
-    public DbSet<User> Users { get; } = null!;
-    public DbSet<UserState> UserStates { get; } = null!;
-    public DbSet<UserRole> UserGroups { get; } = null!;
+    public DbSet<User> Users { get; protected init; } = null!;
+    public DbSet<UserState> UserStates { get; protected init; } = null!;
+    public DbSet<UserRole> UserGroups { get; protected init; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
