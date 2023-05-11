@@ -18,9 +18,9 @@ internal class CreateUserStatusesHandler : IRequestHandler<Command>
 
     public async Task Handle(Command request, CancellationToken cancellationToken)
     {
-        var hasNoStatuses = await _context.UserStates.AnyAsync(cancellationToken);
+        var hasStatuses = await _context.UserStates.AnyAsync(cancellationToken);
 
-        if (hasNoStatuses)
+        if (hasStatuses)
             throw new InvalidOperationException("Statuses are already created");
 
         var statuses = new List<UserState>

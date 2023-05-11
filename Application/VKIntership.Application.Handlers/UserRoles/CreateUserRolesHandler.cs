@@ -18,9 +18,9 @@ internal class CreateUserRolesHandler : IRequestHandler<Command>
 
     public async Task Handle(Command request, CancellationToken cancellationToken)
     {
-        var hasNoRoles = await _context.UserGroups.AnyAsync(cancellationToken);
+        var hasRoles = await _context.UserGroups.AnyAsync(cancellationToken);
 
-        if (hasNoRoles)
+        if (hasRoles)
             throw new InvalidOperationException("Roles are already created");
 
         var roles = new List<UserRole>
