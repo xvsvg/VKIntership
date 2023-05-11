@@ -17,7 +17,7 @@ internal static class SeedingHelper
         }
         catch (Exception ex)
         {
-            logger.LogWarning(ex.Message);
+            logger.LogInformation(ex.Message);
         }
     }
 
@@ -32,7 +32,7 @@ internal static class SeedingHelper
         }
         catch (Exception ex)
         {
-            logger.LogWarning(ex.Message);
+            logger.LogInformation(ex.Message);
         }
     }
 
