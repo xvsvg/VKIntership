@@ -1,6 +1,7 @@
 ﻿using VKIntership.Domain.Core.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using VKIntership.Domain.Core.Abstractions;
 
 namespace VKIntership.Infrastructure.DataAccess.EntityTypeConfigurations;
 
@@ -12,7 +13,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.Login);
         builder.Property(x => x.Password);
         builder.Property(x => x.CreateDate);
-        builder.Navigation(x => x.UserState);
-        builder.Navigation(x => x.UserGroup);
+
+        builder.HasOne(x => x.UserState);
+        builder.HasOne(x => x.UserGroup);
     }
 }

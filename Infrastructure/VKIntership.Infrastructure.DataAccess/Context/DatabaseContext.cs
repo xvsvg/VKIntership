@@ -8,7 +8,10 @@ namespace VKIntership.Infrastructure.DataAccess.Context;
 public class DatabaseContext : DbContext, IDatabaseContext
 {
     public DatabaseContext(DbContextOptions<DatabaseContext> options)
-        : base(options) { }
+        : base(options)
+    {
+        Database.EnsureCreated();
+    }
 
     public DbSet<User> Users { get; protected init; } = null!;
     public DbSet<UserState> UserStates { get; protected init; } = null!;
