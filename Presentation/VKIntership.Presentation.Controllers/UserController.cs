@@ -49,8 +49,8 @@ public class UserController : ControllerBase
     [ProducesResponseType(201)]
     [ProducesResponseType(400)]
     public async Task<ActionResult<UserDto>> CreateUser(
-        [FromBody] string login,
-        [FromBody] string password,
+        string login,
+        string password,
         CancellationToken cancellationToken)
     {
         try

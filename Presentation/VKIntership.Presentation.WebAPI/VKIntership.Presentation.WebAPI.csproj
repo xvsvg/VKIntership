@@ -22,6 +22,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Application\VKIntership.Application.Handlers\VKIntership.Application.Handlers.csproj" />
 	  <ProjectReference Include="..\..\Infrastructure\VKIntership.Infrastructure.DataAccess\VKIntership.Infrastructure.DataAccess.csproj" />
+	  <ProjectReference Include="..\VKIntership.Presentation.Controllers\VKIntership.Presentation.Controllers.csproj" />
 	</ItemGroup>
 
 </Project>

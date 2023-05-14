@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using VKIntership.Application.Handlers.Extensions;
 using VKIntership.Infrastructure.DataAccess.Extensions;
+using VKIntership.Presentation.Controllers;
 using VKIntership.Presentation.WebAPI.Configuration;
 using VKIntership.Presentation.WebAPI.Extensions;
 using VKIntership.Presentation.WebAPI.Helpers;
@@ -22,7 +23,7 @@ internal class Program
 
         builder.Services.AddHandlers(builder.Configuration);
 
-        builder.Services.AddControllers();
+        builder.Services.AddControllers().AddApplicationPart(typeof(IControllerAssemblyMarker).Assembly);
 
         builder.Services.AddSwaggerGen();
 
